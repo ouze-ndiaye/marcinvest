@@ -1,0 +1,196 @@
+<!-- apropos.html (corrigé) -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>À propos — Marc Abdallah Sarr | MARCINVEST</title>
+  <meta name="description" content="Présentation de Marc Abdallah Sarr et partenaires/fournisseurs MARCO-BRICO." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Mise en page bio (texte gauche / photo droite) */
+    .bio{
+      display:grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 18px;
+      align-items: start;
+    }
+    .bio-card{
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: var(--radius);
+      padding: 18px;
+    }
+    .bio-title{
+      margin:0 0 10px;
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: #ffffff;
+    }
+    .bio-text{
+      margin:0;
+      opacity:.9;
+      line-height: 1.75;
+    }
+    .photo{
+      background:#ffffff;
+      border-radius: var(--radius);
+      padding: 10px;
+      border: 1px solid rgba(25,163,74,0.22);
+      box-shadow: 0 12px 26px rgba(0,0,0,0.22);
+    }
+    .photo img{
+      width:100%;
+      height:auto;
+      border-radius: 14px;
+      display:block;
+    }
+    .caption{
+      margin: 10px 0 0;
+      text-align:center;
+      color: rgba(255,255,255,0.80);
+      font-size: .95rem;
+    }
+
+    /* Partenaires */
+    .partners-wrap{
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.10);
+    }
+    .partner-grid{
+      margin-top: 12px;
+      display:grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 12px;
+      align-items:center;
+    }
+    .partner-item{
+      background:#ffffff;
+      border-radius: 14px;
+      border: 1px solid rgba(25,163,74,0.22);
+      padding: 14px;
+      min-height: 76px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.14);
+    }
+    .partner-item img{
+      max-width:100%;
+      max-height: 42px; /* hauteur uniforme */
+      width:auto;
+      height:auto;
+      object-fit: contain;
+      display:block;
+    }
+
+    @media (max-width: 980px){
+      .bio{grid-template-columns: 1fr;}
+      .partner-grid{grid-template-columns: repeat(3, minmax(0,1fr));}
+    }
+    @media (max-width: 520px){
+      .partner-grid{grid-template-columns: repeat(2, minmax(0,1fr));}
+    }
+  </style>
+</head>
+
+<body class="page-final">
+
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="brand-badge">M</div>
+        <span>MARCINVEST</span>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="marco-auto.html">MARCO-AUTO</a>
+        <a href="marco-brico.html">MARCO-BRICO</a>
+        <a href="marco-gusto.html">MARCO-GUSTO</a>
+        <a href="apropos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="hero-left">
+        <h1 class="hero-title">À propos</h1>
+        <p class="hero-slogan">Marc Abdallah Sarr</p>
+        <p class="hero-sub">
+          Un parcours construit dans la constance, guidé par une vision : construire durablement, servir dignement,
+          élever humainement et bâtir des partenariats solides.
+        </p>
+        <div class="hero-actions">
+          <a class="btn secondary" href="#bio">👤 Lire la présentation</a>
+          <a class="btn" href="#partenaires">🤝 Partenaires & fournisseurs</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <hr class="hr" />
+
+  <main class="section">
+    <div class="container">
+
+      <section id="bio">
+        <h2 class="section-title">Présentation</h2>
+
+        <div class="bio">
+          <div class="bio-card">
+            <h3 class="bio-title">Marc Abdallah Sarr – L’homme qui bâtit</h3>
+            <p class="bio-text">
+              Il ne parle pas fort de son ambition. Il la construit. Pendant que d’autres la proclament, lui la travaille,
+              dans le silence des décisions, la rigueur des choix et la constance de l’effort. Marc Abdallah Sarr fait partie
+              de ces hommes qui avancent sans bruit, mais dont les actions laissent des fondations solides. Il a commencé là
+              où tout commence : au bas de l’échelle. À écouter, à répondre, à comprendre que derrière chaque chiffre, il y a
+              un visage. Conseiller, assistant, responsable, directeur : chaque titre n’a jamais été un objectif, seulement une
+              conséquence. Il connaît la valeur d’un salaire gagné honnêtement, la fatigue des trajets matinaux, la pression
+              des résultats et le poids d’un nom à porter. Et s’il parle de capital humain, ce n’est pas un concept, c’est une
+              conviction, forgée au contact des talents qu’il a vus s’élever et de ceux qui se sont éteints faute
+              d’accompagnement. Alors il a décidé de bâtir. Pas pour impressionner, mais pour structurer. Pas pour dominer,
+              mais pour élever. MARCINVEST n’est pas un simple groupe : c’est une déclaration. La déclaration que le Sénégal
+              mérite des entreprises solides, des leaders responsables et des visions ancrées dans la réalité. Il avance avec
+              méthode, pense en stratégie, mais agit toujours avec cœur. Marc Abdallah Sarr, ce n’est pas le bruit : c’est la
+              constance. Ce n’est pas l’éclair : c’est le pilier. Certains cherchent la reconnaissance, lui cherche l’impact.
+              <strong>Et s’il fallait résumer sa trajectoire en une seule phrase : construire durablement, servir dignement,
+              élever humainement et bâtir des partenariats solides.</strong>
+            </p>
+          </div>
+
+          <div>
+            <div class="photo">
+              <img src="MEDIA/marc.jpeg" alt="Photo de Marc Abdallah Sarr" loading="lazy" />
+            </div>
+            <p class="caption">Fondateur / Leader — MARCINVEST</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="partenaires" class="partners-wrap">
+        <h2 class="section-title">Partenaires et fournisseurs</h2>
+
+        <div class="partner-grid" aria-label="Logos partenaires et fournisseurs MARCO-BRICO">
+          <div class="partner-item"><img src="MEDIA/ingco.jpeg" alt="INGCO" loading="lazy"></div>
+          <div class="partner-item"><img src="MEDIA/senac.jpeg" alt="SENAC" loading="lazy"></div>
+          <div class="partner-item"><img src="MEDIA/dangote.jpeg" alt="Dangote Cement Sénégal" loading="lazy"></div>
+          <div class="partner-item"><img src="MEDIA/ingelec.jpeg" alt="INGELEC" loading="lazy"></div>
+          <div class="partner-item"><img src="MEDIA/coloris.jpeg" alt="COLORIS" loading="lazy"></div>
+          <div class="partner-item"><img src="MEDIA/lcs.jpeg" alt="LCS - Les Câbleries du Sénégal" loading="lazy"></div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    © 2026 <strong>MARCINVEST</strong> — À propos
+  </footer>
+
+</body>
+</html>

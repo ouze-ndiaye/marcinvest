@@ -1,0 +1,761 @@
+/* =========================
+   MARCINVEST — STYLE GLOBAL
+   Vert / Blanc — Pro & lisible
+   (CSS nettoyé : doublons supprimés, règles écrasées retirées)
+========================= */
+
+/* ===== Variables ===== */
+:root{
+  --green:#19a34a;
+  --green-dark:#11823a;
+  --green-soft:#e8f5ec;
+
+  --bg:#ffffff;
+  --text:#0f172a;
+  --muted:rgba(15,23,42,0.72);
+
+  --radius:16px;
+  --shadow: 0 14px 28px rgba(15,23,42,0.10);
+  --shadow-soft: 0 10px 22px rgba(15,23,42,0.08);
+}
+
+/* ===== Reset léger ===== */
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height:1.6;
+}
+a{ color:inherit; text-decoration:none; }
+img{ max-width:100%; display:block; }
+
+/* ===== Layout ===== */
+.container{
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+.hr{
+  height:1px;
+  background: rgba(15,23,42,0.10);
+  border:0;
+  margin: 28px 0;
+}
+
+/* =========================
+   NAV
+========================= */
+.nav{
+  position: sticky;
+  top:0;
+  z-index:100;
+  background: rgba(255,255,255,0.90);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(15,23,42,0.10);
+}
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 16px;
+  padding: 10px 0;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+}
+.brand-logo{
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(25,163,74,0.25);
+  box-shadow: 0 10px 20px rgba(15,23,42,0.10);
+}
+
+/* Liens à droite + espace réduit */
+.nav-links{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.nav-links a{
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-weight: 800;
+  letter-spacing: .2px;
+  color: var(--green-dark);
+  transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+}
+.nav-links a:hover{
+  background: rgba(25,163,74,0.10);
+  box-shadow: 0 10px 18px rgba(15,23,42,0.08);
+  transform: translateY(-1px);
+}
+
+/* =========================
+   BOUTONS
+========================= */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: linear-gradient(135deg, var(--green), var(--green-dark));
+  color:#fff;
+  font-weight: 900;
+  box-shadow: var(--shadow-soft);
+  transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
+}
+.btn:hover{
+  transform: translateY(-2px);
+  filter: brightness(1.03);
+  box-shadow: var(--shadow);
+}
+.btn.secondary{
+  background: #fff;
+  color: var(--green-dark);
+  border: 1px solid rgba(25,163,74,0.28);
+}
+.btn.secondary:hover{
+  background: rgba(25,163,74,0.08);
+}
+
+/* =========================
+   HERO (base)
+   IMPORTANT : pas de background global
+========================= */
+.hero{
+  position: relative;
+  padding: 58px 0 68px;
+  background: #ffffff; /* par défaut (autres pages) */
+  overflow:hidden;
+}
+.hero > .container{
+  position: relative;
+  z-index: 1;
+}
+.hero-actions{
+  display:flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+/* Textes hero (base) */
+.hero-title{
+  margin:0 0 6px;
+  color: var(--green-dark);
+  font-weight: 1000;
+  letter-spacing: .6px;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+.hero-slogan{
+  margin:0 0 10px;
+  font-weight: 1000;
+  font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+  color: #0f3d23;
+}
+.hero-sub{
+  margin:0 0 18px;
+  max-width: 760px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+/* =========================
+   ACCUEIL — background UNIQUEMENT sur .home
+========================= */
+.home .hero{
+  min-height: 76vh;
+  display:flex;
+  align-items:center;
+
+  background-image: url("MEDIA/pole-bg.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.home .hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,0.62) 0%,
+      rgba(0,0,0,0.45) 35%,
+      rgba(0,0,0,0.20) 65%,
+      rgba(0,0,0,0.10) 100%
+    );
+}
+.home .hero-title,
+.home .hero-slogan,
+.home .hero-sub{
+  color:#fff;
+  text-shadow: 0 10px 26px rgba(0,0,0,0.35);
+}
+.home .hero-sub{ color: rgba(255,255,255,0.92); }
+
+/* =========================
+   SECTION (base)
+========================= */
+.section{ padding: 32px 0; }
+
+/* =========================
+   ACCUEIL — section pôles avec background (accueil seulement)
+========================= */
+.home #poles.section{
+  position: relative;
+  background-image: url("MEDIA/invest-bg.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow:hidden;
+}
+.home #poles.section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(255,255,255,0.72);
+}
+.home #poles.section > .container{
+  position: relative;
+  z-index: 1;
+}
+
+/* Titre sections */
+.section-title{
+  margin: 0 0 10px;
+  text-align:center;
+  color: var(--green-dark);
+  font-size: 2rem;
+  font-weight: 1000;
+  display: inline-block;
+  padding-bottom: 8px;
+  border-bottom: 3px solid var(--green);
+}
+.section-sub{
+  margin: 0 auto 18px;
+  text-align:center;
+  max-width: 900px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+/* Cartes */
+.cards{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 18px;
+}
+.card{
+  background: rgba(255,255,255,0.92);
+  color: #111;
+  border-radius: var(--radius);
+  padding: 18px;
+  border: 1px solid rgba(25,163,74,0.18);
+  box-shadow: var(--shadow-soft);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.card:hover{
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+.card h3{
+  margin:0 0 8px;
+  color: var(--green-dark);
+  font-size: 1.15rem;
+  font-weight: 1000;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+.card p{ margin:0; opacity:.92; }
+
+.tagline{
+  display:inline-block;
+  margin: 0 0 10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(25,163,74,0.10);
+  border: 1px solid rgba(25,163,74,0.22);
+  color: var(--green-dark);
+  font-weight: 900;
+  font-size: .92rem;
+}
+
+/* CTA */
+.cta{
+  margin-top: 44px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--green), var(--green-dark));
+  padding: 22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  color:#fff;
+  box-shadow: var(--shadow);
+}
+.cta h3{ margin:0; font-size:1.2rem; font-weight: 1000; }
+.cta p{ margin:0; opacity:.95; font-weight: 700; }
+
+/* =========================
+   FOOTER
+========================= */
+.footer{
+  margin-top: 32px;
+  background: #ffffff;
+  border-top: 1px solid rgba(15,23,42,0.10);
+  padding: 26px 0;
+  color: rgba(15,23,42,0.72);
+  text-align:center;
+  font-size: .95rem;
+}
+.footer strong{ color: var(--green-dark); }
+
+/* =========================
+   BONUS
+========================= */
+::selection{ background: rgba(25,163,74,0.22); }
+
+/* =========================
+   MARCO-AUTO (UNIQUEMENT) — design actuel conservé
+   ⚠️ body doit avoir class="page-auto"
+========================= */
+body.page-auto .hero{
+  position: relative;
+  min-height: 86vh;
+  background: url("MEDIA/auto-bg.jpeg") center / cover no-repeat;
+  overflow: hidden;
+}
+body.page-auto .hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.10) 55%, rgba(255,255,255,0.22) 100%),
+    radial-gradient(circle at 50% 20%, rgba(255,255,255,0.20), rgba(255,255,255,0.00) 60%);
+  pointer-events:none;
+}
+body.page-auto .hero > .container{ position: relative; z-index:1; }
+
+/* Hero compact centré */
+body.page-auto .hero-auto-wrap{
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 32px 0 56px;
+}
+body.page-auto .hero-auto-card{
+  width: min(620px, 94%);
+  text-align: center;
+  background: rgba(255,255,255,0.86);
+  border: 1px solid rgba(25,163,74,0.22);
+  border-radius: 18px;
+  padding: 18px 18px 16px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.14);
+}
+body.page-auto .hero-title{ color: var(--green-dark); }
+body.page-auto .hero-slogan{ color: #0f3d23; font-weight: 900; }
+body.page-auto .hero-sub{ color: rgba(15,23,42,0.78); }
+
+/* Montage horizontal 300px + 16px */
+body.page-auto .montage{
+  display:flex;
+  gap:16px;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+body.page-auto .montage .montage-item{
+  width:300px;
+  border-radius: 18px;
+  overflow:hidden;
+  position: relative;
+  border: 1px solid rgba(255,255,255,.22);
+  box-shadow: 0 12px 26px rgba(0,0,0,.25);
+  background: rgba(255,255,255,.08);
+}
+body.page-auto .montage .montage-item img{
+  width:100%;
+  height:100%;
+  max-height:360px;
+  object-fit: cover;
+  object-position: center;
+  display:block;
+}
+body.page-auto .montage .montage-badge{
+  position:absolute;
+  top:10px; left:10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: .9rem;
+  background: rgba(0,0,0,.55);
+  color:#fff;
+  border: 1px solid rgba(255,255,255,.22);
+}
+
+/* Services + Flotte : pas besoin de fond auto ici (demandé) -> on garde lisible */
+body.page-auto .two-col{
+  display:grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 18px;
+  align-items: start;
+}
+body.page-auto .panel{
+  background:#ffffff;
+  color:#111;
+  border-radius: var(--radius);
+  border:1px solid rgba(25,163,74,0.22);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+  padding:18px;
+}
+body.page-auto .list{
+  margin: 10px 0 0;
+  padding-left: 18px;
+  opacity: .92;
+}
+body.page-auto .badge{
+  display:inline-block;
+  margin: 0 0 10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(25,163,74,0.10);
+  border: 1px solid rgba(25,163,74,0.25);
+  color: #1b6a2f;
+  font-weight: 900;
+  font-size: .92rem;
+}
+
+/* Flotte : cartes 300px + 16px, images bien cadrées */
+body.page-auto .fleet{
+  display:flex;
+  gap:16px;
+  flex-wrap: wrap;
+}
+body.page-auto .fleet-card{
+  width: 300px;
+  background: rgba(255,255,255,0.92);
+  color:#111;
+  border-radius: 16px;
+  overflow:hidden;
+  border:1px solid rgba(25,163,74,0.22);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.10);
+  display:flex;
+  flex-direction: column;
+}
+body.page-auto .fleet-media{
+  height: 200px;
+  overflow:hidden;
+  background: rgba(25,163,74,0.08);
+}
+body.page-auto .fleet-media img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  object-position: center;
+  display:block;
+  filter: saturate(1.05) contrast(1.02);
+}
+body.page-auto .fleet-body{ padding: 12px 12px 14px; }
+body.page-auto .fleet-title{ margin:0 0 6px; font-weight:900; color: var(--green-dark); }
+body.page-auto .fleet-desc{ margin:0; opacity:.92; font-size:.95rem; }
+
+/* =========================
+   MARCO-BRICO (UNIQUEMENT)
+   ⚠️ body doit avoir class="page-brico"
+   - background partout + lisibilité
+   - produits 4 colonnes
+   - partenaires alignement horizontal (flex)
+   - images redimensionnées (pas disproportion)
+   - "Votre quincaillerie digitale..." en blanc
+========================= */
+body.page-brico{
+  background: url("MEDIA/brico-bg.jpeg") center / cover no-repeat fixed;
+}
+body.page-brico::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.18);
+  pointer-events: none;
+  z-index: 0;
+}
+body.page-brico .nav,
+body.page-brico .hero,
+body.page-brico .section,
+body.page-brico .footer{
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+/* Hero : garder le style actuel, mais rendre le sous-texte en blanc */
+body.page-brico header.hero .hero-sub{
+  color: #ffffff !important;
+  text-shadow: 0 10px 22px rgba(0,0,0,0.35);
+}
+
+/* Surface claire pour contenu (catalogue / partenaires) */
+body.page-brico #catalogue .container{
+  background: rgba(255,255,255,0.86);
+  border: 1px solid rgba(25,163,74,0.18);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.16);
+}
+
+/* Toolbar inputs (si présents) */
+body.page-brico .select,
+body.page-brico .search{
+  border-radius: 12px;
+  padding: 12px 12px;
+  border: 1px solid rgba(17,130,58,0.25);
+  outline: none;
+  font-weight: 700;
+  background: #fff;
+}
+body.page-brico .search{ min-width: 220px; width: min(360px, 100%); }
+
+/* Produits : 4 par ligne */
+body.page-brico .products{
+  margin-top: 14px;
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+body.page-brico .product{
+  background:#ffffff;
+  color:#111;
+  border-radius: 14px;
+  overflow:hidden;
+  border: 1px solid rgba(25,163,74,0.22);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.16);
+  display:flex;
+  flex-direction:column;
+}
+
+/* ✅ Médias produits : uniformes, pas de déformation */
+body.page-brico .p-media{
+  height: 190px;         /* fixe -> plus propre */
+  overflow: hidden;
+  background: rgba(25,163,74,0.08);
+}
+body.page-brico .p-media img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  object-position: center;
+  display:block;
+}
+
+body.page-brico .p-body{
+  padding: 12px 12px 14px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+body.page-brico .p-title{ margin:0; font-weight:900; color: var(--green-dark); }
+body.page-brico .p-cat{ font-size:.9rem; font-weight:900; color:#1b6a2f; opacity:.95; }
+body.page-brico .p-price{ font-weight:900; color:#111; }
+body.page-brico .p-note{ margin:0; font-size:.92rem; opacity:.9; }
+body.page-brico .p-actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:6px; }
+
+/* Partenaires : alignement horizontal (flex) */
+body.page-brico .partner-grid{
+  margin-top: 12px;
+  display:flex;
+  gap: 12px;
+  flex-wrap: wrap;          /* reste horizontal + passe à la ligne si besoin */
+  align-items:center;
+  justify-content:center;
+}
+body.page-brico .partner-item{
+  background:#ffffff;
+  border-radius: 14px;
+  border: 1px solid rgba(25,163,74,0.22);
+  padding: 14px;
+  min-height: 76px;
+  width: 160px;             /* rend l’alignement stable */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.14);
+}
+body.page-brico .partner-item img{
+  max-width:100%;
+  max-height: 42px;
+  width:auto;
+  height:auto;
+  object-fit: contain;
+}
+
+/* =========================
+   MARCO-GUSTO (UNIQUEMENT)
+   ⚠️ body doit avoir class="page-gusto"
+   - background partout
+   - galerie 4 par ligne
+   - images bien cadrées
+========================= */
+body.page-gusto{
+  background: url("MEDIA/gusto-bg.jpeg") center / cover no-repeat fixed;
+}
+body.page-gusto::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.16);
+  pointer-events: none;
+  z-index: 0;
+}
+body.page-gusto .nav,
+body.page-gusto .hero,
+body.page-gusto .section,
+body.page-gusto .footer{
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+/* Hero : textes blancs (GUSTO) */
+body.page-gusto header.hero .hero-title,
+body.page-gusto header.hero .hero-slogan,
+body.page-gusto header.hero .hero-sub{
+  color: #ffffff !important;
+  text-shadow: 0 10px 22px rgba(0,0,0,0.35);
+}
+
+/* Menu box + CTA : lisibles */
+body.page-gusto .menu-box,
+body.page-gusto .cta{
+  background: rgba(255,255,255,0.88);
+  border: 1px solid rgba(25,163,74,0.18);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.14);
+}
+
+/* Hero mini image droite : cadrage propre */
+body.page-gusto .hero-mini .media{ height: 320px; }
+body.page-gusto .hero-mini img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  object-position: center;
+  display:block;
+}
+
+/* Galerie menu : 4 par ligne + images carrées */
+body.page-gusto .menu-gallery{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 14px;
+}
+body.page-gusto .menu-media{
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: rgba(25,163,74,0.08);
+}
+body.page-gusto .menu-media img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  object-position: center;
+  display:block;
+}
+body.page-gusto .menu-caption{
+  background: rgba(255,255,255,0.92);
+  border-top: 1px solid rgba(25,163,74,0.14);
+}
+
+/* =========================
+   À PROPOS + CONTACT (FINAL-BG)
+   ⚠️ body doit avoir class="page-final"
+   - background sur hero + sections + footer
+   - écritures lisibles, calibré
+========================= */
+body.page-final{
+  background: url("MEDIA/final-bg.jpeg") center / cover no-repeat fixed;
+}
+body.page-final::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.18);
+  pointer-events: none;
+  z-index: 0;
+}
+body.page-final .nav,
+body.page-final .hero,
+body.page-final .section,
+body.page-final .footer{
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+/* Hero textes blancs sur final-bg */
+body.page-final header.hero .hero-title,
+body.page-final header.hero .hero-slogan,
+body.page-final header.hero .hero-sub{
+  color:#ffffff !important;
+  text-shadow: 0 10px 22px rgba(0,0,0,0.35);
+}
+
+/* À propos / contact : surfaces lisibles */
+body.page-final .bio-card,
+body.page-final .contact-info{
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.16);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Contact : form-card reste blanc (déjà dans HTML), on le garde tel quel */
+
+/* =========================
+   RESPONSIVE GLOBAL
+========================= */
+@media (max-width: 980px){
+  .cards{ grid-template-columns: 1fr; }
+  .nav-links{ gap: 8px; }
+  .brand-logo{ width: 56px; height: 56px; }
+
+  /* Auto */
+  body.page-auto .two-col{ grid-template-columns: 1fr; }
+  body.page-auto .fleet{ flex-direction: column; }
+  body.page-auto .fleet-card{ width: 100%; }
+
+  /* Brico */
+  body.page-brico .products{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+  body.page-brico .partner-item{ width: 150px; }
+
+  /* Gusto */
+  body.page-gusto .menu-gallery{ grid-template-columns: repeat(3, 1fr); }
+  body.page-gusto .hero-mini .media{ height: 240px; }
+}
+@media (max-width: 520px){
+  .nav-inner{ gap: 10px; }
+  .nav-links a{ padding: 7px 9px; }
+  .hero{ padding: 46px 0 56px; }
+
+  body.page-brico .products{ grid-template-columns: 1fr; }
+  body.page-gusto .menu-gallery{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 420px){
+  body.page-gusto .menu-gallery{ grid-template-columns: 1fr; }
+}

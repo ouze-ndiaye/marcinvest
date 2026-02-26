@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MARCO-BRICO — Votre maison, brique par brique</title>
+  <meta name="description" content="MARCO-BRICO : quincaillerie digitale à Dakar. Matériaux, outils, équipements — commande et livraison sur devis." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<!-- ✅ Important : classe unique pour appliquer brico-bg seulement ici -->
+<body class="page-brico">
+
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container nav-inner">
+
+      <a class="brand" href="index.html" aria-label="MARCINVEST">
+        <img class="brand-logo" src="MEDIA/marcinvest.jpeg" alt="Logo MARCINVEST">
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="marco-auto.html">MARCO-AUTO</a>
+        <a href="marco-brico.html">MARCO-BRICO</a>
+        <a href="marco-gusto.html">MARCO-GUSTO</a>
+        <a href="apropos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero hero--brico">
+    <div class="container hero-grid">
+
+      <div class="hero-left hero-card">
+        <h1 class="hero-title">MARCO-BRICO</h1>
+        <p class="hero-slogan">Votre maison, brique par brique</p>
+        <p class="hero-sub">
+          Votre quincaillerie digitale : matériaux, outils et équipements.
+          Commande & livraison à Dakar — <strong>sur devis</strong>.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn" href="https://wa.me/221773916532" target="_blank" rel="noopener">💬 Commander / Devis WhatsApp</a>
+          <a class="btn secondary" href="#catalogue">🧱 Voir le catalogue</a>
+        </div>
+      </div>
+
+      <!-- (Optionnel) mini visuel à droite : tu peux remplacer l’image plus tard -->
+      <div class="hero-brico-visual" aria-label="Aperçu MARCO-BRICO">
+        <img src="MEDIA/brico-bg.jpeg" alt="Atelier MARCO-BRICO" loading="lazy">
+      </div>
+
+    </div>
+  </header>
+
+  <hr class="hr" />
+
+  <!-- CATALOGUE -->
+  <main class="section section--brico" id="catalogue">
+    <div class="container brico-surface">
+
+      <h2 class="section-title section-title--green">Catalogue (sur devis)</h2>
+      <p class="section-sub">
+        Choisissez une catégorie, consultez les produits et demandez la confirmation du prix final sur WhatsApp.
+      </p>
+
+      <!-- Toolbar -->
+      <div class="toolbar">
+        <div class="toolbar-left">
+          <select class="select" id="catSelect" aria-label="Filtrer par catégorie">
+            <option value="all">Toutes catégories</option>
+            <option value="ciment">CIMENT</option>
+            <option value="fer">FER À BETON</option>
+            <option value="Câbles">CÂBLES</option>
+            <option value="outillerie">DIVERS</option>
+            <option value="quincaillerie">OUTILS</option>
+            <option value="tuyauterie">TUYAUX</option>
+          </select>
+
+          <input class="search" id="searchInput" type="search" placeholder="Rechercher un produit…" aria-label="Rechercher un produit" />
+        </div>
+
+        <a class="btn secondary" href="https://wa.me/221773916532?text=Bonjour%20MARCO-BRICO%2C%20je%20veux%20un%20devis%20pour%20%3A%20" target="_blank" rel="noopener">💬 Devis rapide</a>
+      </div>
+
+      <!-- Produits -->
+      <div class="products" id="productGrid">
+        <article class="product" data-cat="ciment" data-name="ciment">
+          <div class="p-media"><img src="MEDIA/ciment.png" alt="Ciment et Sable" loading="lazy"></div>
+          <div class="p-body">
+            <p class="p-cat">CIMENT</p>
+            <h3 class="p-title">CIMENT / SABLE</h3>
+            <p class="p-price">Sur devis</p>
+            <p class="p-note">Pour toutes vos contructions. Paiement échalloné sous condition</p>
+            <div class="p-actions">
+              <a class="btn secondary" href="https://wa.me/221773916532?text=Bonjour%20MARCO-BRICO%2C%20je%20veux%20commander%20%3A%20Multiprise%20/%20Rallonge.%20Mod%C3%A8le%20%3A%20%20%20Quantit%C3%A9%20%3A%20" target="_blank" rel="noopener">💬 WhatsApp</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product" data-cat="fer" data-name="fer">
+          <div class="p-media"><img src="MEDIA/fer.jpg" alt="fer" loading="lazy"></div>
+          <div class="p-body">
+            <p class="p-cat">Fer à Béton</p>
+            <h3 class="p-title">Fer</h3>
+            <p class="p-price">Sur devis</p>
+            <p class="p-note">Outil essentiel pour chantier nouvelles et anciennes constructions.</p>
+            <div class="p-actions">
+              <a class="btn secondary" href="https://wa.me/221773916532?text=Bonjour%20MARCO-BRICO%2C%20je%20veux%20commander%20%3A%20Marteau.%20Quantit%C3%A9%20%3A%20" target="_blank" rel="noopener">💬 WhatsApp</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product" data-cat="peinture" data-name="PEinture">
+          <div class="p-media"><img src="MEDIA/senacp.png" alt="Peinture Senac" loading="lazy"></div>
+          <div class="p-body">
+            <p class="p-cat">PEINTURE SENAC</p>
+            <h3 class="p-title">Peinture Senac</h3>
+            <p class="p-price">Sur devis</p>
+            <p class="p-note">vos peintures senac et coloris, application uniforme, idéal murs & plafonds.</p>
+            <div class="p-actions">
+              <a class="btn secondary" href="https://wa.me/221773916532?text=Bonjour%20MARCO-BRICO%2C%20je%20veux%20commander%20%3A%20Niveau%20aluminium.%20Quantit%C3%A9%20%3A%20" target="_blank" rel="noopener">💬 WhatsApp</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product" data-cat="Câbles" data-name="Câbles">
+          <div class="p-media"><img src="MEDIA/cables.jfif" alt="Cables LCS" loading="lazy"></div>
+          <div class="p-body">
+            <p class="p-cat"> CÂBLES</p>
+            <h3 class="p-title">Cables LCS </h3>
+            <p class="p-price">Sur devis</p>
+            <p class="p-note">toute votre installation électrique avec des matériaux de qualité et garantis.  </p>
+            <div class="p-actions">
+              <a class="btn secondary" href="https://wa.me/221773916532?text=Bonjour%20MARCO-BRICO%2C%20je%20veux%20commander%20%3A%20Rouleau%20peinture.%20Quantit%C3%A9%20%3A%20" target="_blank" rel="noopener">💬 WhatsApp</a>
+            </div>
+          </div>
+        </article>
+
+        
+
+        <article class="product" data-cat="outillerie" data-name="outillerie">
+          <div class="p-media"><img src="MEDIA/tuyau.jpg" alt="outils" loading="lazy"></div>
+          <div class="p-body">
+            <p class="p-cat">Outilleries</p>
+            <h3 class="p-title">Divers</h3>
+            <p class="p-price">Sur devis</p>
+            <p class="p-note">Pour tous vos besoins en outillage.</p>
+            <div class="p-actions">
+              <a class="btn secondary" href="https://wa.me/221773916532?text=Bonjour%20MARCO-BRICO%2C%20je%20veux%20un%20devis%20pour%20%3A%20Serrure.%20Type%20%3A%20%20%20Quantit%C3%A9%20%3A%20" target="_blank" rel="noopener">💬 WhatsApp</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product" data-cat="Tuyauterie" data-name="tuyaux">
+          <div class="p-media"><img src="MEDIA/tuyaut.jfif" alt="Tuyau / Plomberie" loading="lazy"></div>
+          <div class="p-body">
+            <p class="p-cat">Tuyauterie & Plomberie</p>
+            <h3 class="p-title">Plomberie</h3>
+            <p class="p-price">Sur devis</p>
+            <p class="p-note">Pour tous vos besoins en tuyauterie et plomberie </p>
+            <div class="p-actions">
+              <a class="btn secondary" href="https://wa.me/221773916532?text=Bonjour%20MARCO-BRICO%2C%20je%20veux%20commander%20%3A%20Scotch%20/%20Adh%C3%A9sif.%20Taille%20%3A%20%20%20Quantit%C3%A9%20%3A%20" target="_blank" rel="noopener">💬 WhatsApp</a>
+            </div>
+          </div>
+        </article>
+        <article class="product" data-cat="quincaillerie" data-name="consommables">
+          <div class="p-media"><img src="MEDIA/quincaillerie.jpg" alt="autres consommables" loading="lazy"></div>
+          <div class="p-body">
+            <p class="p-cat">Autres Consommables</p>
+            <h3 class="p-title">Autres</h3>
+            <p class="p-price">Sur devis</p>
+            <p class="p-note">Pour tous vos besoins en outis divers</p>
+            <div class="p-actions">
+              <a class="btn secondary" href="https://wa.me/221773916532?text=Bonjour%20MARCO-BRICO%2C%20je%20veux%20commander%20%3A%20Scotch%20/%20Adh%C3%A9sif.%20Taille%20%3A%20%20%20Quantit%C3%A9%20%3A%20" target="_blank" rel="noopener">💬 WhatsApp</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="cta cta--brico">
+        <div>
+          <h3>Livraison & confirmation</h3>
+          <p>Les prix peuvent varier selon le modèle et la quantité : confirmation finale via WhatsApp.</p>
+        </div>
+        <a class="btn secondary" href="https://wa.me/221773916532" target="_blank" rel="noopener">💬 Contacter</a>
+      </div>
+
+      <!-- Partenaires -->
+      <div class="partners">
+        <h2 class="section-title section-title--green section-title--left">Partenaires et fournisseurs</h2>
+        <p class="section-sub section-sub--left">
+          MARCO-BRICO s’appuie sur des marques reconnues pour garantir qualité et disponibilité.
+        </p>
+
+        <div class="partner-grid" aria-label="Logos partenaires MARCO-BRICO">
+          <div class="partner-item"><img src="MEDIA/ingco.jpeg" alt="INGCO" loading="lazy"></div>
+          <div class="partner-item"><img src="MEDIA/senac.jpeg" alt="SENAC" loading="lazy"></div>
+          <div class="partner-item"><img src="MEDIA/dangote.jpeg" alt="Dangote Cement Sénégal" loading="lazy"></div>
+          <div class="partner-item"><img src="MEDIA/ingelec.jpeg" alt="INGELEC" loading="lazy"></div>
+          <div class="partner-item"><img src="MEDIA/coloris.jpeg" alt="COLORIS" loading="lazy"></div>
+          <div class="partner-item"><img src="MEDIA/lcs.jpeg" alt="LCS - Les Câbleries du Sénégal" loading="lazy"></div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    © 2026 <strong>MARCINVEST</strong> — MARCO-BRICO · Votre maison, brique par brique
+  </footer>
+
+  <script>
+    // Filtre simple (catégorie + recherche)
+    const catSelect = document.getElementById('catSelect');
+    const searchInput = document.getElementById('searchInput');
+    const productGrid = document.getElementById('productGrid');
+
+    function applyFilters(){
+      const cat = (catSelect.value || 'all').toLowerCase();
+      const q = (searchInput.value || '').trim().toLowerCase();
+
+      [...productGrid.children].forEach(card => {
+        const c = (card.dataset.cat || '').toLowerCase();
+        const name = (card.dataset.name || '').toLowerCase();
+        const okCat = (cat === 'all') || (c === cat);
+        const okQ = !q || name.includes(q);
+        card.style.display = (okCat && okQ) ? '' : 'none';
+      });
+    }
+
+    catSelect?.addEventListener('change', applyFilters);
+    searchInput?.addEventListener('input', applyFilters);
+  </script>
+
+</body>
+</html>

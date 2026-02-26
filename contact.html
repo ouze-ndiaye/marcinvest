@@ -1,0 +1,245 @@
+<!-- contact.html (corrigé : submit supprimé, format MEDIA/img.jpeg conservé) -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — MARCINVEST</title>
+  <meta name="description" content="Contactez MARCINVEST : MARCO-AUTO, MARCO-BRICO, MARCO-GUSTO." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Contact (vert/blanc) */
+    .contact-wrap{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+    .contact-info{
+      background: rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+    .contact-info p{margin: 10px 0; opacity:.9;}
+    .contact-badge{
+      display:inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(25,163,74,0.12);
+      color: #bff2cf;
+      border: 1px solid rgba(25,163,74,0.35);
+      font-weight: 900;
+      letter-spacing: .3px;
+      margin-bottom: 10px;
+    }
+
+    .form-card{
+      background: #ffffff;
+      color: #111;
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+    .form-card h3{margin:0 0 14px; color: var(--green-dark);}
+    .form-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .field{display:flex; flex-direction:column; gap:8px;}
+    .field label{font-weight:900; font-size:0.95rem; color:#144a25;}
+    .field input,
+    .field textarea{
+      border: 1px solid rgba(17,130,58,0.25);
+      border-radius: 12px;
+      padding: 12px 12px;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color .2s ease, box-shadow .2s ease;
+      background: #fff;
+    }
+    .field input:focus,
+    .field textarea:focus{
+      border-color: var(--green);
+      box-shadow: 0 0 0 4px rgba(25,163,74,0.18);
+    }
+    .field textarea{min-height: 130px; resize: vertical;}
+
+    .form-actions{
+      margin-top: 14px;
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      flex-wrap: wrap;
+    }
+    .hint{font-size:0.9rem; color:#2a2a2a; opacity:0.85;}
+    #formStatus{margin:10px 0 0;}
+
+    @media (max-width: 900px){
+      .contact-wrap{grid-template-columns: 1fr;}
+      .form-grid{grid-template-columns: 1fr;}
+    }
+  </style>
+</head>
+
+<body class="page-final">
+
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="brand-badge">M</div>
+        <span>MARCINVEST</span>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="marco-auto.html">MARCO-AUTO</a>
+        <a href="marco-brico.html">MARCO-BRICO</a>
+        <a href="marco-gusto.html">MARCO-GUSTO</a>
+        <a href="apropos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="hero-left">
+        <h1 class="hero-title">Contact</h1>
+        <p class="hero-slogan">On vous répond rapidement</p>
+        <p class="hero-sub">
+          Une question, une commande, un devis ou un partenariat ? Envoyez-nous un message.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="https://wa.me/221773916532" target="_blank" rel="noopener">💬 WhatsApp</a>
+          <a class="btn secondary" href="#form">✉️ Formulaire</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <hr class="hr" />
+
+  <main class="section" id="form">
+    <div class="container">
+
+      <div class="contact-wrap">
+        <div class="contact-info">
+          <div class="contact-badge">MARCINVEST • Contact</div>
+
+          <!-- Remplace l'adresse par celle du flyer -->
+          <p><strong>📍 Adresse :</strong> Keur Massar (Dakar, Sénégal)</p>
+
+          <p><strong>💬 WhatsApp :</strong> +221 77 391 65 32</p>
+          <p><strong>📞 Téléphone :</strong> +221 77 391 65 32</p>
+          <p><strong>✉️ Email :</strong> marcobricosn@gmail.com</p>
+
+          <p><strong>📸 Instagram (BRICO) :</strong> @Marcobrico1</p>
+          <p><strong>🎵 TikTok (BRICO) :</strong> @marcobrico15</p>
+
+          <p style="opacity:0.75; margin-top:14px;">
+            Pour MARCO-GUSTO, un contact dédié est disponible sur sa page.
+          </p>
+        </div>
+
+        <div class="form-card">
+          <h3>Envoyer un message</h3>
+
+          <form id="contactForm" onsubmit="return false;">
+            <div class="form-grid">
+              <div class="field">
+                <label for="nom">Nom complet</label>
+                <input id="nom" name="nom" type="text" placeholder="Ex : Votre nom" required />
+              </div>
+
+              <div class="field">
+                <label for="tel">Téléphone</label>
+                <input id="tel" name="tel" type="tel" placeholder="Ex : +221 77 000 00 00" />
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="Ex : vous@email.com" required />
+              </div>
+
+              <div class="field">
+                <label for="service">Service</label>
+                <input id="service" name="service" type="text" placeholder="Ex : MARCO-AUTO / BRICO / GUSTO" />
+              </div>
+
+              <div class="field" style="grid-column: 1 / -1;">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Décrivez votre besoin..." required></textarea>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <a class="btn secondary" id="waSend" href="#" target="_blank" rel="noopener">💬 Envoyer sur WhatsApp</a>
+              <a class="btn secondary" id="mailSend" href="#">✉️ Envoyer par email</a>
+              <span class="hint">Vous serez redirigé sur WhatsApp.</span>
+            </div>
+
+            <p id="formStatus" class="hint"></p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    © 2026 <strong>MARCINVEST</strong> — Contact
+  </footer>
+
+  <script>
+    // Génère les liens WhatsApp & mail à partir des champs (sans submit)
+    const form = document.getElementById('contactForm');
+    const statusEl = document.getElementById('formStatus');
+    const waBtn = document.getElementById('waSend');
+    const mailBtn = document.getElementById('mailSend');
+
+    const WHATSAPP_NUMBER = '221773916532';
+    const CONTACT_EMAIL = 'marcobricosn@gmail.com';
+
+    function buildMessage() {
+      const nom = document.getElementById('nom')?.value?.trim() || '';
+      const tel = document.getElementById('tel')?.value?.trim() || '';
+      const email = document.getElementById('email')?.value?.trim() || '';
+      const service = document.getElementById('service')?.value?.trim() || '';
+      const message = document.getElementById('message')?.value?.trim() || '';
+
+      return [
+        'Bonjour MARCINVEST,',
+        '',
+        `Nom : ${nom}`,
+        tel ? `Téléphone : ${tel}` : null,
+        `Email : ${email}`,
+        service ? `Service : ${service}` : null,
+        '',
+        'Message :',
+        message
+      ].filter(Boolean).join('\n');
+    }
+
+    function refreshLinks() {
+      const text = buildMessage();
+      const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+      const mailUrl = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Contact MARCINVEST')}&body=${encodeURIComponent(text)}`;
+
+      if (waBtn) waBtn.href = waUrl;
+      if (mailBtn) mailBtn.href = mailUrl;
+
+      if (statusEl) statusEl.textContent = "";
+    }
+
+    if (form) {
+      form.addEventListener('input', refreshLinks);
+      refreshLinks();
+    }
+  </script>
+
+</body>
+</html>
